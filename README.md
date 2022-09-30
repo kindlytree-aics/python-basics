@@ -9,4 +9,5 @@
     - 安装完成后一般当前的`base` env已经够用
 
 ### 更多内容
+- 视频内容分享： https://space.bilibili.com/505620745/channel/seriesdetail?sid=2649320
 - 抖音号：kindlytree_aics
