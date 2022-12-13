@@ -21,3 +21,5 @@ conda env list
 ```
 conda create -n pylearn jupyter notebook
 ```
+
+conda windows下pytorch安装

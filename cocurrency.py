@@ -30,6 +30,7 @@ if __name__=='__main__':
     row_size = arr.shape[0]
     start = 0
     delta = row_size//cpu_count
+    #数据分块
     arr_chunks = []
     for i in range(cpu_count-1):
         start = i*delta
@@ -43,8 +44,8 @@ if __name__=='__main__':
     end = datetime.datetime.now()
     print('result parallel: ',sum(result_parallel))
     print('runtime of parallel: {} s'.format((end - start).total_seconds()))
+    #下面两行代码采用不同的方式实现多进程并行
     #result =pool.map(count_within_range, [arr[i, :] for i in range(arr.shape[0])])
-
     result_parallel_async =pool.map_async(count_within_range, arr_chunks)
     print('result parallel async: ',sum(result_parallel_async.get(timeout=100)))
     pool.close()
